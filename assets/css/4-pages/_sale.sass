@@ -1,0 +1,72 @@
+.u-half-width
+	width: 49.6%
+
+@media screen and (max-width: 600px)
+	.u-half-width
+		width: 100%
+
+figure.suit
+	overflow: hidden
+	position: relative
+	display: block
+	+transform(scale(1.0))
+
+	.suit-img
+		height: 400px
+		background:
+			image: url(/assets/img/clothes-2.jpg)
+			size: cover
+			position: center top
+		+border-radius(3px)
+		+transform(scale(1.0))
+		display: block
+		overflow: hidden
+		+transition(0.3s)
+
+	&:hover
+
+		.suit-img
+			+transform(scale(1.1))
+
+i
+	font-size: 30px
+	display: block
+
+.place
+	overflow: hidden
+	position: relative
+	+border-radius(3px)
+
+	&:hover
+
+		figcaption
+			+transform(translateX(0))
+			opacity: 1
+
+	.store
+		background:
+			position: center
+			size: cover
+		overflow: hidden
+		height: 100px
+		margin-bottom: 22px
+		+transform(scale(1))
+		+transition(0.3s)
+		position: relative
+
+	figcaption
+		position: absolute
+		top: 10px
+		left: 0
+		background-color: rgba(0,0,0,0.7)
+		padding: 2px 5px
+		color: white
+		transform: translateX(-30px)
+		opacity: 0
+		+transition(0.3s)
+
+	.amsterdam-store
+		background-image: url(/assets/img/amsterdam.jpg)
+
+	.london-store
+		background-image: url(/assets/img/london.jpg)

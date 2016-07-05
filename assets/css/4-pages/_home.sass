@@ -1,0 +1,117 @@
+.container
+	position: relative
+	background: white
+	overflow: hidden
+
+	article
+		padding: 100px 0
+		max-width: 640px
+		margin: 0 auto
+		text-align: center
+
+		.text-layout
+			margin-top: 100px
+
+h1
+	font-size: 3em
+	font-weight: 300
+	color: #ccc
+
+hr
+	border: 0px none transparent
+	border-bottom: 1px solid #ccc
+	width: 70%
+	max-width: 700px
+
+figure
+	margin: auto
+
+.clothes-pics
+	margin-top: 100px
+	overflow: hidden
+
+	figure
+		margin-bottom: 20px
+		+transform(translateX(30px))
+		opacity: 0
+		pointer-events: none
+		+transition(0.3s)
+		overflow: hidden
+		position: relative
+
+		figcaption
+			position: absolute
+			top: 10px
+			left: 0px
+			background-color: transparentize(black, 0.3)
+			color: $white
+			padding: 2px 5px
+			+transform(translateX(-30px))
+			opacity: 0
+			+transition(0.3s)
+
+		img
+			+transform(scale(1.0))
+			+transition(0.3s)
+			display: block
+
+		&.is-showing
+			+transform(translateX(0px))
+			opacity: 1
+			pointer-events: auto
+
+		&:hover
+
+			img
+				+transform(scale(1.1))
+
+			figcaption
+				+transform(translateX(0px))
+				opacity: 1
+
+
+// Promoscope
+.large-window
+	height: 640px
+	background:
+		image: url(/assets/img/clothes-2.jpg)
+		attachment: fixed
+		size: 640px auto
+		position: center 0px
+	+border-radius(50%)
+	+flex
+	+justify-content(center)
+	+align-items(center)
+	margin-top: 100px
+
+	.promo-text
+		font-size: 50px
+		color: $white
+		line-height: 1.2
+
+		span
+			display: block
+			font-size: 30px
+
+			i
+				font-size: 18px
+				color: transparentize(white, 0.3)
+
+		.window-cta
+			display: block
+			font-size: 30px
+			color: $white
+			text-decoration: none
+			padding: 10px 10px
+			border: 2px solid
+			+transition(0.3s)
+			width: 80%
+			margin: 8px auto 0px auto
+
+			&:hover
+				color: rgba(225,225,225,0.8)
+
+@media screen and (max-width: 700px)
+	.large-window
+		border-radius: 2px
+		height: 400px

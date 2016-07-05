@@ -1,0 +1,146 @@
+header
+
+	.header-container
+		position: relative
+		height: 400px
+		background:
+			image: url(/assets/img/header.jpg)
+			size: auto 400px
+			position: top center
+			attachment: fixed
+		overflow: hidden
+
+		.logo
+			width: 256px
+			height: 256px
+			background:
+				image: url(/assets/img/logo.png)
+				size: cover
+			position: absolute
+			left: 50%
+			top: 50%
+			margin-top: -128px
+			margin-left: -128px
+
+	.nav
+		background-color: $white
+		padding: 10px 0 0 0
+		position: fixed
+		top: 0
+		margin-top: 0
+		width: 100%
+		display: none
+		z-index: 20
+		padding-top: 20px
+
+		&.visible
+			display: block
+
+		.header-brand
+			width: 50px
+			height: 50px
+			background:
+				image: url(/assets/img/logo.png)
+				size: cover
+				position: center
+			position: absolute
+			left: 50%
+			margin-left: -25px
+
+		.open-menu
+			display: none
+			margin-left: 20px
+
+		@media screen and (max-width: 855px)
+			.open-menu
+				display: block
+				margin-top: 0
+
+				a
+					color: $black
+					text-decoration: none
+					font-size: 30px
+
+			#navigation
+				display: none
+
+			#navigation-mobile
+				position: fixed
+				top: 0
+				margin-top: 0
+				left: 0
+				margin-left: 0
+				padding-right: 50px
+				height: 100vh
+				padding-left: 0px
+				background-color: $white
+				left: -100%
+				+transition(0.3s)
+				box-shadow: 1px 1px 5px 0px #111
+
+				&.is-open
+					left: 0%
+					+transition(0.3s)
+
+				.close-menu
+					margin-top: 20px
+					margin-left: 20px
+					padding: 0
+					+transition(0.3s)
+
+					a
+						color: $black
+						text-decoration: none
+						font-size: 30px
+
+				li
+					margin-left: 20px
+					margin-top: 20px
+					list-style-type: none
+
+					a
+						font-size: 20px
+						text-decoration: none
+						color: $black
+						text-transform: uppercase
+						+transition(0.3s)
+
+						&:hover
+							color: darken($yellow, 20%)
+
+		@media screen and (min-width: 855px)
+			#navigation-mobile
+				display: none
+
+			.header-brand
+				display: none
+
+			#navigation
+				padding: 0px
+				background-color: #fff
+				z-index: 1000
+				position: relative
+				+transition(0.3s)
+
+				li
+					list-style-type: none
+					display: inline-block
+					text-align: center
+					width: 33%
+					margin: auto
+
+					a
+						color: $black
+						text-decoration: none
+						font-size: 1.5em
+						+transition(0.3s)
+
+						&:hover
+							color: darken($yellow, 20%)
+
+
+@media screen and (min-width: 400px)
+	header
+
+		.header-container
+			background-size: cover
